@@ -10,11 +10,7 @@ import { filter, map } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
   items = [
-    { title: 'Libre Inversión' },
-    { title: 'Comercio' },
-    { title: 'Vivienda' },
-    { title: 'Educativo' },
-    { title: 'CrediFacil' },
+    { title: 'Libre Inversión' }
   ];
 
   itemsAhorros = [{ title: 'CDAT' }, { title: 'Contractuales' }];
