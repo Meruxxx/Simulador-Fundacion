@@ -124,7 +124,7 @@ $nb-enabled-css-custom-propierties:true;
 
 @layer components {
   .btn {
-    @apply bg-brand-blue-100 #{!important};
+    @apply bg-brand-green-100 #{!important};
     @apply text-white #{!important};
   }
 
