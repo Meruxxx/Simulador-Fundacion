@@ -145,8 +145,8 @@ export class CreditoPage {
           this.valorCuota = valorCuota[0];
           this.interes = valorCuota[1];
           this.interesEA = valorCuota[2];
-          this.totalCredito =this.valorCuota * parseFloat(this.numeroCuotas.value);
-          this.totalCredito = this.valorCuota * parseFloat(this.plazo.value);
+          // this.totalCredito =this.valorCuota * parseFloat(this.numeroCuotas.value);
+          this.totalCredito = this.montoPrestamo.value;//this.valorCuota * parseFloat(this.plazo.value);
           this.haSimulado = true;
           // console.log(valorCuota);
         }
