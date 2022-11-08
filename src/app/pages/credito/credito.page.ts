@@ -31,24 +31,44 @@ export class CreditoPage {
 
   options: any = [
     {
-      text: '1 año',
-      value: 12,
-    },
-    {
-      text: '2 años',
+      text: '2 año',
       value: 24,
     },
     {
       text: '3 años',
-      value: 36,
-    },
-    {
-      text: '5 años',
-      value: 60,
+      value: 38,
     },
     {
       text: '6 años',
       value: 72,
+    },
+    {
+      text: '7 años',
+      value: 84,
+    },
+    {
+      text: '8 años',
+      value: 96,
+    },
+    {
+      text: '9 años',
+      value: 108,
+    },
+    {
+      text: '10 años',
+      value: 120,
+    },
+    {
+      text: '11 años',
+      value: 132,
+    },
+    {
+      text: '13 años',
+      value: 156,
+    },
+    {
+      text: '15 años',
+      value: 180,
     },
   ];
 

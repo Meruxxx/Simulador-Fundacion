@@ -73,6 +73,39 @@
               />
             </div>
           </div>
+          <div>
+            <h6>Plazo de la inversión</h6>
+            <!-- <nb-select
+                    type="number"
+                    fullWidth
+                    shape="round"
+                    type="text"
+                    placeholder="Nº Cuotas"
+                    shape="semi-round"
+                    formControlName="campo2"
+                  >
+                    <nb-option *ngFor="let option of options" [value]="option">
+                      {{ option }}
+                    </nb-option>
+                  </nb-select> -->
+            <div class="containerGrup">
+              <nb-button-group
+                outline
+                size="medium"
+                class="flex-wrap space-x-1"
+              >
+                <button
+                  class="mt-1"
+                  nbButtonToggle
+                  *ngFor="let option of options"
+                  [value]="option.value"
+                  (click)="onClickNumCuotas(option)"
+                >
+                  {{ option.text }}
+                </button>
+              </nb-button-group>
+            </div>
+          </div>
           <ng-container
             *ngIf="plazo.invalid&&(montoPrestamo.dirty||plazo.touched) && plazo.errors"
           >
