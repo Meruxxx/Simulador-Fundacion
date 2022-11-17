@@ -5,11 +5,16 @@ export const tasaInteresLibreInversion: Record<
   number,
   { tasaMensual: number; tasaEA: number }
 > = {
-  12: { tasaMensual: 1.76, tasaEA: 23.29 },
-  24: { tasaMensual: 1.92, tasaEA: 25.64 },
-  36: { tasaMensual: 2.00, tasaEA: 26.83 },
-  60: { tasaMensual: 2.15, tasaEA: 29.08 },
-  72: { tasaMensual: 1.95, tasaEA: 26.08 },
+  24: { tasaMensual: 1.25, tasaEA: 16.08 },
+  38: { tasaMensual: 1.25, tasaEA: 16.08},
+  72: { tasaMensual: 1.25, tasaEA: 16.08 },
+  84: { tasaMensual: 1.25, tasaEA: 16.08 },
+  96: { tasaMensual: 1.25, tasaEA: 16.08 },
+  108: { tasaMensual: 1.25, tasaEA: 16.08 },
+  120: { tasaMensual: 1.25, tasaEA: 16.08 },
+  132: { tasaMensual: 1.25, tasaEA: 16.08 },
+  156: { tasaMensual: 1.25, tasaEA: 16.08 },
+  180: { tasaMensual: 1.25, tasaEA: 16.08 },
 };
 export const tasaInteresVivienda: Record<
   number,
@@ -46,9 +51,9 @@ export const parametrosLibreInversion: Record<
   TipoDeuda,
   { plazoMaximo: number; montoMaximo: number }
 > = {
-  HIPOTECA: { plazoMaximo: 72, montoMaximo: 408836700 },
-  DEUDOR_SOLIDARIO: { plazoMaximo: 72, montoMaximo: 408836700 },
-  NINGUNA: { plazoMaximo: 72, montoMaximo: 408836700 },
+  HIPOTECA: { plazoMaximo: 180, montoMaximo: 45000000 },
+  DEUDOR_SOLIDARIO: { plazoMaximo: 180, montoMaximo: 45000000 },
+  NINGUNA: { plazoMaximo: 180, montoMaximo: 45000000 },
 };
 export const parametrosVivienda: Record<
   'NINGUNA',
@@ -111,27 +116,39 @@ export const CALCULOS_UTILS = {
     let intervalocuota:number=0;
     switch (tipoCredito) {
       case 'LIBRE_INVERSION':
-        if (numerocuota < 13) {
-          intervalocuota = 12;
-        }
-        else if (numerocuota < 25) {
+        if (numerocuota < 25) {
           intervalocuota = 24;
         }
-        else if (numerocuota <37){
-          intervalocuota = 36;
+        else if (numerocuota < 39) {
+          intervalocuota = 38;
+        }
+        else if (numerocuota <73){
+          intervalocuota = 72;
         }
 
-          else if (numerocuota <61){
-            intervalocuota = 60;
+          else if (numerocuota <85){
+            intervalocuota = 84;
           }
 
-          else if (numerocuota <73){
-            intervalocuota = 72;
+          else if (numerocuota <97){
+            intervalocuota = 96;
           }
 
-          else if (numerocuota >72){
-            intervalocuota = 72;
-          }
+          else if (numerocuota >109){
+            intervalocuota = 108;
+        }
+        else if (numerocuota >121){
+          intervalocuota = 120;
+        }
+        else if (numerocuota >133){
+          intervalocuota = 132;
+        }
+        else if (numerocuota >157){
+          intervalocuota = 156;
+        }
+        else if (numerocuota >181){
+          intervalocuota = 180;
+        }
         break;
         case 'VIVIENDA':
           intervalocuota = 84;

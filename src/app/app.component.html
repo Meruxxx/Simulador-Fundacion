@@ -1,10 +1,12 @@
 <nb-layout container class="flex toolbard">
-  <nb-layout-header subheader class="header">
+  <nb-layout-header class="header">
     <div class="grid w-full grid-cols-3" style="flex-direction: row">
       <div class="flex w-full" fixed>
-        <img src="./assets/img/Void.svg" />
+      <div class="rounded-full flex-col-reverse" style=" display: flex;background-color: white;align-items: center;" fixed>
+        <img src="./assets/img/logo-home.png" />
       </div>
-      <div class="contain">
+      </div>
+      <!-- <div class="contain">
         <div
           class="flex space-x-6 contain-button"
           style="justify-content: center"
@@ -19,23 +21,12 @@
           >
             Créditos
           </button>
-          <!-- <button
-            outline
-            nbButton
-            [nbContextMenu]="itemsAhorros"
-            nbContextMenuTag="context-menu"
-            size="large"
-            [ngClass]="{ btn: esAhorros }"
-          >
-            Ahorros
-          </button> -->
         </div>
-      </div>
+      </div> -->
     </div>
   </nb-layout-header>
 
   <nb-layout-column style="justify-content: center" class="flex pt-0">
-    <!-- class="flex w-full pt-0" -->
     <router-outlet></router-outlet>
   </nb-layout-column>
 

@@ -1,5 +1,5 @@
 <div class="mb-4 text-center">
-  <h1 class="text-brand-blue-100 title">SIMULADOR DE CRÉDITO</h1>
+  <h1 class="text-brand-green-100 title">SIMULADOR DE CRÉDITO</h1>
   <h2>cuota fija y tasa fija</h2>
 </div>
 <div class="container grid gap-12 grid-col-1 lg:grid-cols-2">
@@ -40,18 +40,18 @@
             *ngIf="montoPrestamo.invalid&&montoPrestamo.updateOn && (montoPrestamo.dirty||montoPrestamo.touched) && montoPrestamo.errors"
           >
             <span
-              class="text-brand-blue-100"
+              class="text-brand-green-200"
               *ngIf="montoPrestamo.errors.required"
             >
               El campo es requerido
             </span>
             <span
-              class="text-brand-blue-100"
+              class="text-brand-green-200"
               *ngIf="montoPrestamo.errors?.pattern"
             >
               El campo debe ser numérico
             </span>
-            <span class="text-brand-blue-100" *ngIf="montoPrestamo.errors?.max">
+            <span class="text-brand-green-200" *ngIf="montoPrestamo.errors?.max">
               El monto no debe superar el valor de {{montomaximo|currency}}
             </span>
           </ng-container>
@@ -73,16 +73,49 @@
               />
             </div>
           </div>
+          <!-- <div>
+            <h6>Plazo de la inversión</h6>
+            <nb-select
+                    type="number"
+                    fullWidth
+                    shape="round"
+                    type="text"
+                    placeholder="Nº Cuotas"
+                    shape="semi-round"
+                    formControlName="campo2"
+                  >
+                    <nb-option *ngFor="let option of options" [value]="option">
+                      {{ option }}
+                    </nb-option>
+                  </nb-select>
+            <div class="containerGrup">
+              <nb-button-group
+                outline
+                size="medium"
+                class="flex-wrap space-x-1"
+              >
+                <button
+                  class="mt-1"
+                  nbButtonToggle
+                  *ngFor="let option of options"
+                  [value]="option.value"
+                  (click)="onClickNumCuotas(option)"
+                >
+                  {{ option.text }}
+                </button>
+              </nb-button-group>
+            </div>
+          </div> -->
           <ng-container
             *ngIf="plazo.invalid&&(montoPrestamo.dirty||plazo.touched) && plazo.errors"
           >
-            <span class="text-brand-blue-100" *ngIf="plazo.errors.required">
+            <span class="text-brand-green-200" *ngIf="plazo.errors.required">
               El campo es requerido
             </span>
-            <span class="text-brand-blue-100" *ngIf="plazo.errors.pattern">
+            <span class="text-brand-green-200" *ngIf="plazo.errors.pattern">
               El campo debe ser numérico
             </span>
-            <span class="text-brand-blue-100" *ngIf="plazo.errors.max">
+            <span class="text-brand-green-200" *ngIf="plazo.errors.max">
               El número de cuotas debe ser menor o igual a {{plazomaximo}} meses
             </span>
           </ng-container>
@@ -125,6 +158,7 @@
     [interesesEA]="interesEA"
     [TotalAhorro]="valorCuota"
     [TotalCredito]="totalCredito"
+    [plazo]="this.plazo.value"
     [tipoSolicitud]="'Crédito'"
   ></app-informacion-credito>
 </div>

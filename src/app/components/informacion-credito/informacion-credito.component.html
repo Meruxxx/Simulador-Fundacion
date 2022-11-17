@@ -5,7 +5,7 @@
   <nb-card-body>
     <form>
       <div class="flex flex-col space-y-6">
-        <div class="p-6 text-white rounded-lg bg-brand-blue-200">
+        <div class="p-6 text-white rounded-lg bg-brand-green-300">
           <span class="text-white uppercase">{{ informacion.titleLabel }}</span>
 
           <h1
@@ -37,7 +37,7 @@
                 >{{ informacion.footerThirdLabel }}
               </span>
               <h6 class="block text-white">
-                {{ informacion.footerThirdValue }}
+                {{ informacion.footerThirdValue | currency }}
               </h6>
             </div>
           </div>

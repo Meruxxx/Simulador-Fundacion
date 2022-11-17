@@ -18,6 +18,7 @@ export class InformacionCreditoComponent {
   @Input() interesesEA!: any;
   @Input() TotalAhorro!: any;
   @Input() TotalCredito!: any;
+  @Input() plazo!: any;
   @Input() tipoSolicitud!: any;
 
   _Tem: number = 1;
@@ -34,14 +35,14 @@ export class InformacionCreditoComponent {
   get informacion() {
     if (this.title === 'Informción Crédito') {
       return {
-        titleLabel: 'Valor de la cuota',
+        titleLabel: 'Cuota fija mensual',
         title: this.valorCuota,
-        footerFirstLabel: 'Interés mensuales' ,
+        footerFirstLabel: 'Tasa' ,
         footerFirstValue:  `${this.intereses}%`,
-        footerSecondLabel: 'Tasa efectiva anual',
-        footerSecondValue: `${this.interesesEA}%`,
-        footerThirdLabel: '',//'Pago total del crédito',
-        footerThirdValue: '',//this.toCurrency(this.TotalCredito),
+        footerSecondLabel: 'Tiempo de pago',
+        footerSecondValue: `${this.plazo}`,
+        footerThirdLabel: 'Valor del crédito',
+        footerThirdValue: `${this.TotalCredito}`,
       }
     } else if(this.title === 'Informción Ahorro CDAT') {
       return {
