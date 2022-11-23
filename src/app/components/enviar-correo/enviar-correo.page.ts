@@ -41,7 +41,7 @@ export class EnviarCorreoPage {
       } = this.form.value;
       this.emailService
         .send({
-          to: 'Jefecomercial@coosanluis.coop',
+          to: 'info@isovivienda.org',
           params: {
             tipo_contacto: this.tipo_contacto,
             nombre_contacto: NombreCliente,
